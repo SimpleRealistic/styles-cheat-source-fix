@@ -41,10 +41,6 @@ void CGUI::Draw()
 		}
 	}
 
-	if (ShouldDrawCursor)
-		I::Engine->ClientCmd_Unrestricted(XorStr("cursortimeout 0"));
-	else
-		I::Engine->ClientCmd_Unrestricted(XorStr("cursortimeout 60"));
 
 	if (ShouldDrawCursor)
 	{

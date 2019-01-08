@@ -163,21 +163,21 @@ CEsp::EBox CEsp::DynamicBox(IClientEntity* pPlayer, bool& PVS)
 
 Color CEsp::GetPlayerColor(IClientEntity* pEntity)
 {
-	float red = Menu::Window.ColorsTab.CTBoxR.GetValue();
-	float green = Menu::Window.ColorsTab.CTBoxG.GetValue();
-	float blue = Menu::Window.ColorsTab.CTBoxB.GetValue();
+	float red = Menu::Window.VisualsTab.CTBoxR.GetValue();
+	float green = Menu::Window.VisualsTab.CTBoxG.GetValue();
+	float blue = Menu::Window.VisualsTab.CTBoxB.GetValue();
 
-	float red1 = Menu::Window.ColorsTab.TBoxR.GetValue();
-	float green1 = Menu::Window.ColorsTab.TBoxG.GetValue();
-	float blue1 = Menu::Window.ColorsTab.TBoxB.GetValue();
+	float red1 = Menu::Window.VisualsTab.TBoxR.GetValue();
+	float green1 = Menu::Window.VisualsTab.TBoxG.GetValue();
+	float blue1 = Menu::Window.VisualsTab.TBoxB.GetValue();
 
-	float redTNV = Menu::Window.ColorsTab.TBoxRnv.GetValue();
-	float greenTNV = Menu::Window.ColorsTab.TBoxGnv.GetValue();
-	float blueTNV = Menu::Window.ColorsTab.TBoxBnv.GetValue();
+	float redTNV = Menu::Window.VisualsTab.TBoxRnv.GetValue();
+	float greenTNV = Menu::Window.VisualsTab.TBoxGnv.GetValue();
+	float blueTNV = Menu::Window.VisualsTab.TBoxBnv.GetValue();
 
-	float redCTNV = Menu::Window.ColorsTab.CTBoxRnv.GetValue();
-	float greenCTNV = Menu::Window.ColorsTab.CTBoxGnv.GetValue();
-	float blueCTNV = Menu::Window.ColorsTab.CTBoxBnv.GetValue();
+	float redCTNV = Menu::Window.VisualsTab.CTBoxRnv.GetValue();
+	float greenCTNV = Menu::Window.VisualsTab.CTBoxGnv.GetValue();
+	float blueCTNV = Menu::Window.VisualsTab.CTBoxBnv.GetValue();
 
 	int TeamNum = pEntity->GetTeamNum();
 	bool IsVis = GameUtils::IsVisible(hackManager.pLocal(), pEntity, (int)CSGOHitboxID::Head);
@@ -599,10 +599,10 @@ void CEsp::DrawDistance(CEsp::EBox size, IClientEntity* pEntity)
 
 void CEsp::DrawGlow()
 {
-	int GlowR = Menu::Window.ColorsTab.GlowR.GetValue();
-	int GlowG = Menu::Window.ColorsTab.GlowG.GetValue();
-	int GlowB = Menu::Window.ColorsTab.GlowB.GetValue();
-	int GlowZ = Menu::Window.ColorsTab.GlowZ.GetValue();
+	int GlowR = Menu::Window.VisualsTab.GlowR.GetValue();
+	int GlowG = Menu::Window.VisualsTab.GlowG.GetValue();
+	int GlowB = Menu::Window.VisualsTab.GlowB.GetValue();
+	int GlowZ = Menu::Window.VisualsTab.GlowZ.GetValue();
 
 	CGlowObjectManager* GlowObjectManager = (CGlowObjectManager*)GlowManager;
 
@@ -627,12 +627,12 @@ void CEsp::DrawGlow()
 
 				if (GameUtils::IsVisible(hackManager.pLocal(), Entity, 0))
 				{
-					glowEntity->set((Entity->GetTeamNum() == hackManager.pLocal()->GetTeamNum()) ? Color(Menu::Window.ColorsTab.GlowR.GetValue(), Menu::Window.ColorsTab.GlowG.GetValue(), Menu::Window.ColorsTab.GlowB.GetValue(), 200) : Color(Menu::Window.ColorsTab.GlowR.GetValue(), Menu::Window.ColorsTab.GlowG.GetValue(), Menu::Window.ColorsTab.GlowB.GetValue(), 200));
+					glowEntity->set((Entity->GetTeamNum() == hackManager.pLocal()->GetTeamNum()) ? Color(Menu::Window.VisualsTab.GlowR.GetValue(), Menu::Window.VisualsTab.GlowG.GetValue(), Menu::Window.VisualsTab.GlowB.GetValue(), 200) : Color(Menu::Window.VisualsTab.GlowR.GetValue(), Menu::Window.VisualsTab.GlowG.GetValue(), Menu::Window.VisualsTab.GlowB.GetValue(), 200));
 				}
 
 				else
 				{
-					glowEntity->set((Entity->GetTeamNum() == hackManager.pLocal()->GetTeamNum()) ? Color(Menu::Window.ColorsTab.GlowR.GetValue(), Menu::Window.ColorsTab.GlowG.GetValue(), Menu::Window.ColorsTab.GlowB.GetValue(), 200) : Color(Menu::Window.ColorsTab.GlowR.GetValue(), Menu::Window.ColorsTab.GlowG.GetValue(), Menu::Window.ColorsTab.GlowB.GetValue(), 200));
+					glowEntity->set((Entity->GetTeamNum() == hackManager.pLocal()->GetTeamNum()) ? Color(Menu::Window.VisualsTab.GlowR.GetValue(), Menu::Window.VisualsTab.GlowG.GetValue(), Menu::Window.VisualsTab.GlowB.GetValue(), 200) : Color(Menu::Window.VisualsTab.GlowR.GetValue(), Menu::Window.VisualsTab.GlowG.GetValue(), Menu::Window.VisualsTab.GlowB.GetValue(), 200));
 				}
 			}
 

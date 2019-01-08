@@ -12,3 +12,5 @@ public:
 		return VFunc<SetHostFn>(1)(this, pEnt);
 	}
 };
+
+// if you think this is real styles you're fucking retarded and brain dead

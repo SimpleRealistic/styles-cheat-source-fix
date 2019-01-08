@@ -95,7 +95,7 @@ void SuicideWindow::Setup()
 	RegisterTab(&MiscTab);
 	RegisterTab(&MoveTab);
 	RegisterTab(&MiscTab2);
-	RegisterTab(&ColorsTab);
+	//RegisterTab(&ColorsTab);
 	RECT Client = GetClientArea();
 	Client.bottom -= 29;
 
@@ -105,7 +105,7 @@ void SuicideWindow::Setup()
 	MiscTab.Setup();
 	MoveTab.Setup();
 	MiscTab2.Setup();
-	ColorsTab.Setup();
+	//ColorsTab.Setup();
 }
 
 //============================================r_1-4 setup========================================================
@@ -247,7 +247,6 @@ void CMiscRageTab::Setup()
 	DefaultAntiAimGroup.SetSize(292, 335);
 	DefaultAntiAimGroup.SetPosition(86, -13);
 	DefaultAntiAimGroup.AddTab(CGroupTab("antiaim", 1));
-	DefaultAntiAimGroup.AddTab(CGroupTab("antiaim2", 2));
 	DefaultAntiAimGroup.AddTab(CGroupTab("misc", 3));
 	RegisterControl(&DefaultAntiAimGroup);
 
@@ -525,7 +524,6 @@ void CVisualTab::Setup()
 	EspGroup.SetSize(292, 335);
 	EspGroup.SetPosition(86, -13);
 	EspGroup.AddTab(CGroupTab("player", 1));
-	EspGroup.AddTab(CGroupTab("entity", 2));
 	EspGroup.AddTab(CGroupTab("misc", 3));
 	EspGroup.AddTab(CGroupTab("render", 4));
 	EspGroup.AddTab(CGroupTab("color", 5));
@@ -563,6 +561,66 @@ void CVisualTab::Setup()
 
 	OtherNoSmoke.SetFileId("v_nosmoke");
 	EspGroup.PlaceLabledControl3(4, "no smoke", this, &OtherNoSmoke);
+
+	CTBoxR.SetFileId("ct_box_r");
+	CTBoxR.SetBoundaries(0.f, 255.f);
+	CTBoxR.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("ct red"), this, &CTBoxR);
+
+	CTBoxG.SetFileId("ct_box_g");
+	CTBoxG.SetBoundaries(0.f, 255.f);
+	CTBoxG.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("ct green"), this, &CTBoxG);
+
+	CTBoxB.SetFileId("ct_box_b");
+	CTBoxB.SetBoundaries(0.f, 255.f);
+	CTBoxB.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("ct blue"), this, &CTBoxB);
+
+	CTBoxRnv.SetFileId("ct_box_h_r");
+	CTBoxRnv.SetBoundaries(0.f, 255.f);
+	CTBoxRnv.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("ct hidden red"), this, &CTBoxRnv);
+
+	CTBoxGnv.SetFileId("ct_box_h_g");
+	CTBoxGnv.SetBoundaries(0.f, 255.f);
+	CTBoxGnv.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("ct hidden green"), this, &CTBoxGnv);
+
+	CTBoxBnv.SetFileId("ct_box_h_b");
+	CTBoxBnv.SetBoundaries(0.f, 255.f);
+	CTBoxBnv.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("ct hidden blue"), this, &CTBoxBnv);
+
+	TBoxR.SetFileId("t_box_r");
+	TBoxR.SetBoundaries(0.f, 255.f);
+	TBoxR.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("t red"), this, &TBoxR);
+
+	TBoxG.SetFileId("t_box_g");
+	TBoxG.SetBoundaries(0.f, 255.f);
+	TBoxG.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("t green"), this, &TBoxG);
+
+	TBoxB.SetFileId("t_box_b");
+	TBoxB.SetBoundaries(0.f, 255.f);
+	TBoxB.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("t blue"), this, &TBoxB);
+
+	TBoxRnv.SetFileId("t_box_h_r");
+	TBoxRnv.SetBoundaries(0.f, 255.f);
+	TBoxRnv.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("t hidden red"), this, &TBoxRnv);
+
+	TBoxGnv.SetFileId("t_box_h_g");
+	TBoxGnv.SetBoundaries(0.f, 255.f);
+	TBoxGnv.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("t hidden green"), this, &TBoxGnv);
+
+	TBoxBnv.SetFileId("t_box_h_b");
+	TBoxBnv.SetBoundaries(0.f, 255.f);
+	TBoxBnv.SetValue(39.f);
+	EspGroup.PlaceLabledControl3(5, XorStr("t hidden blue"), this, &TBoxBnv);
 }
 
 void CMoveTab::Setup()
@@ -573,7 +631,6 @@ void CMoveTab::Setup()
 	MainGroup.SetSize(292, 335);
 	MainGroup.SetPosition(86, -13);
 	MainGroup.AddTab(CGroupTab("strafer", 1));
-	MainGroup.AddTab(CGroupTab("simulation", 2));
 	RegisterControl(&MainGroup);
 
 	AutoStrafer.SetFileId(XorStr("m_autostrafe"));
@@ -588,39 +645,10 @@ void CMiscTab::Setup()
 	MainGroup.SetSize(292, 335);
 	MainGroup.SetPosition(86, -13);
 	MainGroup.AddTab(CGroupTab("main", 1));
-	MainGroup.AddTab(CGroupTab("game", 2));
-	MainGroup.AddTab(CGroupTab("game2", 3));
-	MainGroup.AddTab(CGroupTab("players", 4));
 	RegisterControl(&MainGroup);
 
 	BunnyHop.SetFileId(XorStr("m_autohop"));
 	MainGroup.PlaceLabledControl3(1, XorStr("auto hop"), this, &BunnyHop);
-
-	ThirdPerson.SetFileId(XorStr("m_thirdperson"));
-	MainGroup.PlaceLabledControl3(2, XorStr("enable thirdperson [v]"), this, &ThirdPerson);
-
-	//Thirdpersonkey.SetFileId("m_thirdperson_key");
-	//MainGroup.PlaceLabledControl3(2, XorStr("thirdperson key"), this, &Thirdpersonkey);
-
-	ThirdPersonType.SetFileId(XorStr("m_thirdperson_type"));
-	ThirdPersonType.AddItem(XorStr("fake"));
-	ThirdPersonType.AddItem(XorStr("real"));
-	MainGroup.PlaceLabledControl3(2, XorStr("thirdperson type"), this, &ThirdPersonType);
-
-	Menu_Red.SetFileId(XorStr("m_color_menured"));
-	Menu_Red.SetBoundaries(0, 255);
-	Menu_Red.SetValue(255);
-	MainGroup.PlaceLabledControl3(3, XorStr("red"), this, &Menu_Red);
-
-	Menu_Green.SetFileId(XorStr("m_color_menugreen"));
-	Menu_Green.SetBoundaries(0, 255);
-	Menu_Green.SetValue(165);
-	MainGroup.PlaceLabledControl3(3, XorStr("green"), this, &Menu_Green);
-
-	Menu_Blue.SetFileId(XorStr("m_color_menublue"));
-	Menu_Blue.SetBoundaries(0, 255);
-	Menu_Blue.SetValue(0);
-	MainGroup.PlaceLabledControl3(3, XorStr("blue"), this, &Menu_Blue);
 }
 
 void CMiscTab2::Setup()
@@ -671,71 +699,6 @@ void ColorsTab::Setup()
 {
 	SetTitle("v_color");
 #pragma region Visual Colors
-	ColorsCT.SetText(XorStr(""));
-	ColorsCT.SetSize(292, 335);
-	ColorsCT.SetPosition(86, -13);
-	ColorsCT.AddTab(CGroupTab("main", 1));
-	RegisterControl(&ColorsCT);
-
-	CTBoxR.SetFileId("ct_box_r");
-	CTBoxR.SetBoundaries(0.f, 255.f);
-	CTBoxR.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("ct red"), this, &CTBoxR);
-
-	CTBoxG.SetFileId("ct_box_g");
-	CTBoxG.SetBoundaries(0.f, 255.f);
-	CTBoxG.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("ct green"), this, &CTBoxG);
-
-	CTBoxB.SetFileId("ct_box_b");
-	CTBoxB.SetBoundaries(0.f, 255.f);
-	CTBoxB.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("ct blue"), this, &CTBoxB);
-
-	CTBoxRnv.SetFileId("ct_box_h_r");
-	CTBoxRnv.SetBoundaries(0.f, 255.f);
-	CTBoxRnv.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("ct hidden red"), this, &CTBoxRnv);
-
-	CTBoxGnv.SetFileId("ct_box_h_g");
-	CTBoxGnv.SetBoundaries(0.f, 255.f);
-	CTBoxGnv.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("ct hidden green"), this, &CTBoxGnv);
-
-	CTBoxBnv.SetFileId("ct_box_h_b");
-	CTBoxBnv.SetBoundaries(0.f, 255.f);
-	CTBoxBnv.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("ct hidden blue"), this, &CTBoxBnv);
-
-	TBoxR.SetFileId("t_box_r");
-	TBoxR.SetBoundaries(0.f, 255.f);
-	TBoxR.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("t red"), this, &TBoxR);
-
-	TBoxG.SetFileId("t_box_g");
-	TBoxG.SetBoundaries(0.f, 255.f);
-	TBoxG.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("t green"), this, &TBoxG);
-
-	TBoxB.SetFileId("t_box_b");
-	TBoxB.SetBoundaries(0.f, 255.f);
-	TBoxB.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("t blue"), this, &TBoxB);
-
-	TBoxRnv.SetFileId("t_box_h_r");
-	TBoxRnv.SetBoundaries(0.f, 255.f);
-	TBoxRnv.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("t hidden red"), this, &TBoxRnv);
-
-	TBoxGnv.SetFileId("t_box_h_g");
-	TBoxGnv.SetBoundaries(0.f, 255.f);
-	TBoxGnv.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("t hidden green"), this, &TBoxGnv);
-
-	TBoxBnv.SetFileId("t_box_h_b");
-	TBoxBnv.SetBoundaries(0.f, 255.f);
-	TBoxBnv.SetValue(39.f);
-	ColorsCT.PlaceLabledControl3(1, XorStr("t hidden blue"), this, &TBoxBnv);
 
 #pragma endregion Visual Colors
 }

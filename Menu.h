@@ -280,6 +280,63 @@ public:
 	CGroupBox OtherESP;
 	CCheckBox Crosshair;
 	CComboBox CrosshairType;
+
+	CGroupBox ColorsCT;
+
+	CGroupBox ColorsGlow;
+
+	CGroupBox ColorsT;
+
+	CGroupBox CTChams;
+
+	CGroupBox TChams;
+
+	//Glow
+	CSlider GlowR;
+	CSlider GlowG;
+	CSlider GlowB;
+	CSlider GlowZ;
+
+	//CTBox
+	CSlider CTBoxR;
+	CSlider CTBoxG;
+	CSlider CTBoxB;
+
+	//Chams CTV
+	CSlider CTChamsR;
+	CSlider CTChamsG;
+	CSlider CTChamsB;
+
+	//CTBoxNV
+	CSlider CTBoxRnv;
+	CSlider CTBoxGnv;
+	CSlider CTBoxBnv;
+
+	//ChamsCTNV
+	CSlider CTChamRnv;
+	CSlider CTChamGnv;
+	CSlider CTChamBnv;
+
+	//TBox
+	CSlider TBoxR;
+	CSlider TBoxG;
+	CSlider TBoxB;
+
+	//Chams TV
+	CSlider TChamsR;
+	CSlider TChamsG;
+	CSlider TChamsB;
+
+	//TBox NV
+	CSlider TBoxRnv;
+	CSlider TBoxGnv;
+	CSlider TBoxBnv;
+
+	//Chams T NV
+	CSlider TChamsRnv;
+	CSlider TChamsGnv;
+	CSlider TChamsBnv;
+
 };
 
 class CMoveTab : public CTab
@@ -419,61 +476,7 @@ class ColorsTab : public CTab
 public:
 	void Setup();
 	// Box ESP Colour
-	CGroupBox ColorsCT;
 
-	CGroupBox ColorsGlow;
-
-	CGroupBox ColorsT;
-
-	CGroupBox CTChams;
-
-	CGroupBox TChams;
-
-	//Glow
-	CSlider GlowR;
-	CSlider GlowG;
-	CSlider GlowB;
-	CSlider GlowZ;
-
-	//CTBox
-	CSlider CTBoxR;
-	CSlider CTBoxG;
-	CSlider CTBoxB;
-
-	//Chams CTV
-	CSlider CTChamsR;
-	CSlider CTChamsG;
-	CSlider CTChamsB;
-
-	//CTBoxNV
-	CSlider CTBoxRnv;
-	CSlider CTBoxGnv;
-	CSlider CTBoxBnv;
-
-	//ChamsCTNV
-	CSlider CTChamRnv;
-	CSlider CTChamGnv;
-	CSlider CTChamBnv;
-
-	//TBox
-	CSlider TBoxR;
-	CSlider TBoxG;
-	CSlider TBoxB;
-
-	//Chams TV
-	CSlider TChamsR;
-	CSlider TChamsG;
-	CSlider TChamsB;
-
-	//TBox NV
-	CSlider TBoxRnv;
-	CSlider TBoxGnv;
-	CSlider TBoxBnv;
-
-	//Chams T NV
-	CSlider TChamsRnv;
-	CSlider TChamsGnv;
-	CSlider TChamsBnv;
 
 };
 
